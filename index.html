@@ -1,58 +1,734 @@
+<!-- =========================
+U-Life Future Engine
+超級人格招募文案引擎｜全覆蓋版
+直接覆蓋 index.html
+========================= -->
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>強力招募社群文案引擎｜U-Life Future Engine</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>超級人格招募文案引擎</title>
+
 <style>
+
 :root{
-  --bg:#08101f;--card:rgba(255,255,255,.075);--card2:rgba(255,255,255,.12);--line:rgba(255,255,255,.14);
-  --text:#fff8ea;--muted:#cfc4b4;--gold:#d8b46a;--gold2:#ffe7a9;--blue:#7fd8ff;--pink:#ff8fc7;--green:#7dffbf;
-  --shadow:0 30px 90px rgba(0,0,0,.48);
+--bg:#07101d;
+--card:rgba(255,255,255,.06);
+--line:rgba(255,255,255,.12);
+--gold:#d8b46a;
+--gold2:#ffe7ad;
+--blue:#8cdcff;
+--pink:#ff8ec8;
+--text:#fff8ee;
+--muted:#cfc2b0;
+--shadow:0 30px 80px rgba(0,0,0,.45);
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;background:radial-gradient(circle at 12% 0%,rgba(216,180,106,.22),transparent 30%),radial-gradient(circle at 88% 18%,rgba(127,216,255,.16),transparent 34%),linear-gradient(180deg,#070b14 0%,#111827 52%,#070b14 100%);color:var(--text);line-height:1.75;overflow-x:hidden}.wrap{width:min(1180px,calc(100% - 34px));margin:auto}.hidden{display:none!important}
-nav{position:sticky;top:0;z-index:20;background:rgba(6,9,17,.76);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:1000}.logo{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111;font-weight:1000}.nav-btn{border:none;border-radius:999px;padding:13px 20px;background:linear-gradient(135deg,var(--gold2),var(--gold));font-weight:1000;cursor:pointer}
-.hero{padding:78px 0 48px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.badge{display:inline-flex;padding:8px 14px;border-radius:999px;background:rgba(216,180,106,.12);border:1px solid rgba(216,180,106,.35);color:var(--gold2);font-size:13px;font-weight:950;margin-bottom:18px}h1{font-size:clamp(42px,6vw,76px);line-height:1.06;letter-spacing:-2px;margin:0 0 18px}.gradient{background:linear-gradient(135deg,#fff,var(--gold),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:19px;color:#e6dac9;max-width:650px;margin:0 0 26px}.btn{border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:14px 20px;font-weight:1000;cursor:pointer;transition:.2s;font-family:inherit;min-height:52px}.btn:hover{transform:translateY(-2px)}.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111}.btn-blue{background:linear-gradient(135deg,#c8f3ff,var(--blue));color:#06101d}.btn-pink{background:linear-gradient(135deg,#ffd2eb,var(--pink));color:#190713}.btn-dark{background:linear-gradient(135deg,#fff,#2d313b);color:#fff}.btn-ghost{background:rgba(255,255,255,.08);color:#fff}.btn-row{display:flex;gap:12px;flex-wrap:wrap}.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}.proof div{padding:15px;border-radius:18px;background:rgba(255,255,255,.065);border:1px solid var(--line)}.proof strong{color:var(--gold2);display:block;font-size:22px}.proof span{color:var(--muted);font-size:13px}
-.panel{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.16);border-radius:34px;padding:24px;box-shadow:var(--shadow);overflow:hidden}.panel:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 12%,rgba(216,180,106,.22),transparent 30%),radial-gradient(circle at 90% 0%,rgba(127,216,255,.16),transparent 30%);pointer-events:none}.panel>*{position:relative}.screen{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.dots{display:flex;gap:7px}.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.32)}.status{color:var(--green);font-size:12px;font-weight:1000}.mini-title{font-size:26px;font-weight:1000;margin:0 0 8px}.mini-p{color:var(--muted);font-size:14px;margin:0 0 18px}label{display:block;margin-bottom:6px;color:#f7ead8;font-size:13px;font-weight:900}select,textarea{width:100%;border:1px solid rgba(255,255,255,.16);border-radius:16px;background:rgba(0,0,0,.26);color:#fff;padding:12px 13px;font-size:15px;font-family:inherit;outline:none}textarea{min-height:90px;resize:vertical}.form{display:grid;gap:12px}.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.output{margin-top:16px;min-height:390px;padding:18px;border-radius:24px;background:rgba(0,0,0,.3);border:1px solid rgba(216,180,106,.24);white-space:pre-wrap;color:#fff8e9;font-size:15px}.pill{display:inline-flex;padding:7px 12px;border-radius:999px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111;font-weight:1000;font-size:12px;margin-bottom:12px}
-section{padding:60px 0}.section-title{font-size:clamp(32px,4vw,52px);line-height:1.16;letter-spacing:-1px;margin:0 0 12px}.section-sub{color:var(--muted);font-size:18px;max-width:780px;margin:0 0 28px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:22px;border-radius:26px;background:rgba(255,255,255,.07);border:1px solid var(--line);box-shadow:0 14px 48px rgba(0,0,0,.18)}.card h3{margin:0 0 8px;font-size:22px}.card p{margin:0;color:var(--muted)}.num{color:var(--gold2);font-size:36px;font-weight:1000;line-height:1;margin-bottom:12px}.strategy{columns:2;column-gap:16px}.script{break-inside:avoid;padding:18px;margin:0 0 16px;border-radius:22px;background:rgba(255,255,255,.07);border:1px solid var(--line)}.script small{color:var(--gold2);font-weight:1000}.script p{margin:8px 0 0;color:#eadfcd}.cta{padding:36px;border-radius:36px;background:linear-gradient(135deg,rgba(216,180,106,.2),rgba(127,216,255,.12));border:1px solid rgba(255,255,255,.17);box-shadow:var(--shadow);text-align:center}.cta h2{font-size:clamp(31px,5vw,58px);line-height:1.1;margin:0 0 12px}.cta p{color:#e6dac9;max-width:760px;margin:0 auto 24px;font-size:18px}footer{padding:34px 0 54px;text-align:center;color:var(--muted);font-size:13px}
-@media(max-width:900px){.grid,.cards,.proof,.platforms{grid-template-columns:1fr}.strategy{columns:1}.hero{padding-top:48px}}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",sans-serif;
+background:
+radial-gradient(circle at top left, rgba(216,180,106,.2), transparent 30%),
+radial-gradient(circle at bottom right, rgba(140,220,255,.12), transparent 30%),
+linear-gradient(180deg,#07101d 0%,#101827 100%);
+color:var(--text);
+overflow-x:hidden;
+}
+
+.container{
+width:min(1250px,calc(100% - 40px));
+margin:auto;
+}
+
+nav{
+position:sticky;
+top:0;
+z-index:100;
+backdrop-filter:blur(20px);
+background:rgba(5,8,14,.7);
+border-bottom:1px solid var(--line);
+}
+
+.nav-inner{
+height:74px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:900;
+font-size:20px;
+}
+
+.logo-icon{
+width:42px;
+height:42px;
+border-radius:14px;
+display:grid;
+place-items:center;
+background:linear-gradient(135deg,var(--gold2),var(--gold));
+color:#111;
+font-weight:900;
+}
+
+.hero{
+padding:90px 0 60px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.badge{
+display:inline-flex;
+padding:8px 16px;
+border-radius:999px;
+background:rgba(216,180,106,.12);
+border:1px solid rgba(216,180,106,.35);
+color:var(--gold2);
+font-size:13px;
+font-weight:900;
+margin-bottom:22px;
+}
+
+h1{
+font-size:clamp(48px,7vw,90px);
+line-height:1.03;
+letter-spacing:-4px;
+margin-bottom:22px;
+}
+
+.gradient{
+background:linear-gradient(135deg,#fff,var(--gold),var(--blue));
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.8;
+color:#ddd0bf;
+max-width:760px;
+margin-bottom:30px;
+}
+
+.btn-row{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 26px;
+border-radius:999px;
+font-weight:900;
+border:none;
+cursor:pointer;
+transition:.25s;
+font-size:15px;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.btn-gold{
+background:linear-gradient(135deg,var(--gold2),var(--gold));
+color:#111;
+}
+
+.btn-dark{
+background:rgba(255,255,255,.08);
+border:1px solid var(--line);
+color:white;
+}
+
+.panel{
+background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.05));
+border:1px solid rgba(255,255,255,.12);
+border-radius:36px;
+padding:30px;
+box-shadow:var(--shadow);
+position:relative;
+overflow:hidden;
+}
+
+.panel::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top left, rgba(216,180,106,.16), transparent 30%),
+radial-gradient(circle at bottom right, rgba(140,220,255,.1), transparent 30%);
+pointer-events:none;
+}
+
+.panel > *{
+position:relative;
+}
+
+.panel-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.dots{
+display:flex;
+gap:7px;
+}
+
+.dot{
+width:10px;
+height:10px;
+border-radius:50%;
+background:rgba(255,255,255,.35);
+}
+
+.status{
+font-size:12px;
+font-weight:900;
+color:#79ffb8;
+}
+
+label{
+display:block;
+margin-bottom:8px;
+font-size:13px;
+font-weight:900;
+color:#f7ebda;
+}
+
+select{
+width:100%;
+padding:14px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.12);
+background:rgba(0,0,0,.25);
+color:white;
+margin-bottom:18px;
+font-size:15px;
+}
+
+.output{
+margin-top:22px;
+padding:22px;
+border-radius:28px;
+background:rgba(0,0,0,.28);
+border:1px solid rgba(216,180,106,.2);
+min-height:480px;
+white-space:pre-wrap;
+line-height:1.95;
+font-size:16px;
+}
+
+.section{
+padding:80px 0;
+}
+
+.section-title{
+font-size:clamp(36px,5vw,60px);
+line-height:1.1;
+margin-bottom:18px;
+}
+
+.section-sub{
+font-size:18px;
+color:var(--muted);
+line-height:1.8;
+max-width:760px;
+margin-bottom:36px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+padding:28px;
+border-radius:28px;
+background:var(--card);
+border:1px solid var(--line);
+box-shadow:var(--shadow);
+}
+
+.card h3{
+font-size:26px;
+margin-bottom:12px;
+}
+
+.card p{
+color:var(--muted);
+line-height:1.8;
+}
+
+footer{
+padding:50px 0;
+text-align:center;
+color:#a99e90;
+font-size:14px;
+}
+
+@media(max-width:980px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:58px;
+}
+
+}
+
 </style>
 </head>
+
 <body>
-<nav><div class="wrap nav-inner"><div class="brand"><div class="logo">U</div><div>強力招募社群文案引擎</div></div><button class="nav-btn" onclick="document.getElementById('engine').scrollIntoView({behavior:'smooth'})">立即生成</button></div></nav>
 
-<main>
-<section class="hero"><div class="wrap grid"><div><div class="badge">直銷招募思維 × 社群爆文 × 未來焦慮 × 格局型邀約</div><h1>不是發文。<br>是讓人看完後開始想：<span class="gradient">我是不是也該找一條路？</span></h1><p class="lead">這套引擎專門生成「不低級、不硬銷、但有招募穿透力」的社群文案。每個按鈕都能無限制更換內容：FB 建立信任、IG 建立嚮往、Threads 打穿認知。</p><div class="btn-row"><button class="btn btn-gold" onclick="document.getElementById('engine').scrollIntoView({behavior:'smooth'})">開始生成招募文案</button><button class="btn btn-ghost" onclick="generateRandomAll()">隨機爆發一篇</button></div><div class="proof"><div><strong>鉤子</strong><span>第一句先打痛點，不先講制度</span></div><div><strong>想法</strong><span>用觀點建立高度，不像硬招募</span></div><div><strong>格局</strong><span>把機會包裝成未來趨勢</span></div></div></div>
-<div class="panel" id="engine"><div class="screen"><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="status">UNLIMITED RECRUIT COPY ENGINE</div></div><h2 class="mini-title">強力招募社群文案引擎</h2><p class="mini-p">每按一次都會重新組合：鉤子、痛點、格局、夢想、邀約、低壓 CTA。</p><div class="form"><div><label>招募主軸</label><select id="theme"><option value="income">第二收入與翻身</option><option value="future">AI 時代與趨勢焦慮</option><option value="system">系統、團隊與複製</option><option value="growth">成長、圈層與人生升級</option><option value="health">健康狀態與自信改變</option></select></div><div><label>招募語氣</label><select id="tone"><option value="boss">總裁舞台：格局與信念</option><option value="sharp">人間清醒：直接打醒</option><option value="warm">溫暖邀約：低壓靠近</option><option value="story">故事轉折：親身經歷感</option></select></div><div><label>行動邀約</label><select id="cta"><option value="私訊我『AI副業』，我幫你看你適合從哪條路開始。">私訊：AI副業</option><option value="私訊我『翻身』，我給你一份收入定位方向。">私訊：翻身</option><option value="私訊我『想了解』，先不用決定，我只幫你看適不適合。">私訊：想了解</option><option value="留言『+1』，我把入門方向傳給你。">留言：+1</option></select></div><div><label>品牌底線</label><textarea id="rule">不要喊暴富，不要像老派直銷，不要逼迫加入。要讓人感覺這是一套有格局、有系統、有未來性的事業入口。</textarea></div><div class="platforms"><button class="btn btn-blue" onclick="generate('fb')">FB 無限制生成</button><button class="btn btn-pink" onclick="generate('ig')">IG 無限制生成</button><button class="btn btn-dark" onclick="generate('threads')">Threads 無限制生成</button></div><div class="btn-row"><button class="btn btn-gold" onclick="generateRandomAll()">三平台隨機生成</button><button class="btn btn-ghost" onclick="copyOutput()">複製文案</button></div></div><div class="output" id="output">請選擇 FB / IG / Threads，每個按鈕都能無限制更換招募文案。</div></div></div></section>
+<nav>
+<div class="container nav-inner">
 
-<section><div class="wrap"><h2 class="section-title">高級招募不是喊「加入我」</h2><p class="section-sub">真正強的招募，是讓對方先被你的世界觀吸引，再被你的狀態感染，最後才願意靠近你的系統。</p><div class="cards"><div class="card"><div class="num">01</div><h3>先打痛點</h3><p>收入焦慮、未來不確定、努力沒被放大，先讓對方承認自己卡住。</p></div><div class="card"><div class="num">02</div><h3>再拉格局</h3><p>不要只講產品，要講趨勢、系統、圈層、複製能力與未來選擇權。</p></div><div class="card"><div class="num">03</div><h3>最後低壓邀約</h3><p>不是叫人立刻加入，而是邀請他先了解、先定位、先看自己適不適合。</p></div></div></div></section>
+<div class="logo">
+<div class="logo-icon">U</div>
+<div>超級人格招募文案引擎</div>
+</div>
 
-<section><div class="wrap"><h2 class="section-title">內建招募思維資料庫</h2><p class="section-sub">每次生成都會從這些思維模組重新組合，所以不是固定罐頭文。</p><div class="strategy"><div class="script"><small>痛點鉤子</small><p>你不是不努力，是你的努力沒有進入一套能放大的系統。</p></div><div class="script"><small>趨勢格局</small><p>AI 時代會重新分配機會，真正有優勢的人，是懂得用工具放大自己的人。</p></div><div class="script"><small>團隊信念</small><p>一個人靠意志力很容易放棄，一群人有系統，才有機會把普通人帶上來。</p></div><div class="script"><small>低壓邀約</small><p>不用急著相信我，先了解一次，你會知道這是不是你要的下一條路。</p></div><div class="script"><small>身份轉換</small><p>你不是來賣東西，你是來學會如何經營自己、影響別人、創造新收入。</p></div><div class="script"><small>未來焦慮</small><p>最危險的不是現在收入低，而是三年後你還只能靠同一種收入方式。</p></div></div></div></section>
+<button class="btn btn-gold">
+無限制生成
+</button>
 
-<section><div class="wrap"><div class="cta"><h2>真正高級的招募，是讓人自己想靠近。</h2><p>你不是要追著人加入，你要建立一個讓人看見希望、格局與未來入口的內容系統。</p><button class="btn btn-gold" onclick="document.getElementById('engine').scrollIntoView({behavior:'smooth'})">回到文案引擎</button></div></div></section>
-</main>
-<footer>U-Life Future Engine｜強力招募社群文案引擎</footer>
+</div>
+</nav>
+
+<section class="hero container">
+
+<div>
+
+<div class="badge">
+人格維度 × 直銷招募心理 × 未來焦慮 × AI時代
+</div>
+
+<h1>
+不是生成文案。<br>
+是生成：<span class="gradient">不同人內心真正害怕的東西。</span>
+</h1>
+
+<p>
+這套系統不是固定句庫。<br><br>
+
+而是透過：
+人群、情緒、人格、平台、人生狀態、未來焦慮、身份投射，
+重新組合成「真正像人寫的招募文案」。
+</p>
+
+<div class="btn-row">
+
+<button class="btn btn-gold" onclick="generateCopy()">
+立即生成
+</button>
+
+<button class="btn btn-dark" onclick="generateCopy()">
+無限制重抽
+</button>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-top">
+
+<div class="dots">
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+</div>
+
+<div class="status">
+PERSONA RECRUIT ENGINE
+</div>
+
+</div>
+
+<label>人群定位</label>
+<select id="audience">
+<option>上班族</option>
+<option>美業</option>
+<option>媽媽族群</option>
+<option>想翻身的人</option>
+<option>負債族</option>
+<option>創業者</option>
+<option>兼職族</option>
+<option>業務型人格</option>
+<option>迷茫的人</option>
+<option>曾經失敗的人</option>
+</select>
+
+<label>情緒核心</label>
+<select id="emotion">
+<option>焦慮</option>
+<option>不甘心</option>
+<option>迷茫</option>
+<option>羨慕</option>
+<option>壓力</option>
+<option>孤獨</option>
+<option>想改變</option>
+<option>想翻身</option>
+</select>
+
+<label>人格風格</label>
+<select id="persona">
+<option>總裁型</option>
+<option>人間清醒型</option>
+<option>溫暖陪伴型</option>
+<option>霸氣型</option>
+<option>故事型</option>
+<option>未來感型</option>
+</select>
+
+<label>社群平台</label>
+<select id="platform">
+<option>Facebook</option>
+<option>Instagram</option>
+<option>Threads</option>
+</select>
+
+<div class="btn-row">
+
+<button class="btn btn-gold" onclick="generateCopy()">
+生成超級招募文案
+</button>
+
+<button class="btn btn-dark" onclick="copyText()">
+複製文案
+</button>
+
+</div>
+
+<div class="output" id="output">
+點擊「生成超級招募文案」
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+這不是亂數抽卡。
+</h2>
+
+<p class="section-sub">
+而是：
+不同人格 × 不同焦慮 × 不同人生狀態，
+所產生出來的情緒招募系統。
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>人格模組</h3>
+<p>
+總裁型、陪伴型、人間清醒型、未來感型。
+</p>
+</div>
+
+<div class="card">
+<h3>人生焦慮</h3>
+<p>
+收入、AI時代、年齡、家庭、迷茫、沒未來感。
+</p>
+</div>
+
+<div class="card">
+<h3>身份投射</h3>
+<p>
+讓不同人覺得：
+「這篇在講我。」
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+U-Life Future Engine｜超級人格招募文案引擎
+</footer>
 
 <script>
-const bank={
- income:{hooks:['只靠一份收入，表面叫穩定，真相叫脆弱。','很多人不是沒有能力，是沒有第二條收入路線。','你現在最該怕的，不是沒賺到快錢，而是未來只剩一種選擇。','收入卡住的人，通常不是不努力，而是努力沒有被系統放大。'],ideas:['真正的收入安全感，不是公司永遠照顧你，而是你離開任何地方都能創造價值。','副業不是貪心，是在不確定的時代，替自己保留選擇權。','如果你的時間只能換一次錢，你的人生就很難真正翻身。'],dreams:['你要的不是多賺一點，而是開始擁有選擇人生的底氣。','當你有第二收入，你的眼神會不一樣，因為你不再完全被現實壓著走。']},
- future:{hooks:['AI 不會淘汰所有人，但會淘汰不願意升級的人。','未來最殘酷的，是別人用 AI 放大自己，你還在用舊方法硬撐。','時代正在重新洗牌，慢慢來的人會被慢慢淘汰。','你不是輸給別人，你是輸給不願意更新的自己。'],ideas:['AI 時代的關鍵，不是你會不會很厲害，而是你願不願意把工具放進自己的事業。','未來獎勵的不是最努力的人，而是最能快速學習、快速行動、快速複製的人。','懂趨勢的人先建立系統，不懂趨勢的人只會繼續抱怨環境。'],dreams:['這是一個普通人也能重新開始的時代，只要你願意學會放大自己。','你過去的經驗不會白費，只要重新包裝，就可能變成新的機會入口。']},
- system:{hooks:['一個人想翻身靠努力，一群人想翻身靠系統。','沒有系統的努力，常常只是高級版的原地打轉。','你不缺熱血，你缺的是有人帶、有工具、有流程。','很多人做不久，不是沒夢想，是沒有一套能撐住他的系統。'],ideas:['高級招募不是叫人加入，而是讓人看到一套普通人也能複製的路。','真正的團隊價值，是讓新人不用從零摸索，而是照著路線一步一步上來。','一個好的系統，會把個人的弱點降到最低，把群體的力量放到最大。'],dreams:['你不是一個人在硬撐，你是進入一群人一起往上走的節奏。','當你站在系統裡，很多以前做不到的事情會開始變得有可能。']},
- growth:{hooks:['你身邊的圈層，正在決定你未來的高度。','人不是突然變強，是進入對的環境後，被拉著長大。','你不需要一開始就很厲害，但你不能一直待在不會讓你變強的地方。','真正可怕的不是失敗，是你習慣了現在的版本。'],ideas:['成長最快的方法，是靠近一群比你更有行動力的人。','如果你的生活圈只會消耗你，你就很難長出新的自己。','事業不是只賺錢，也是讓你重新建立自信、表達力與影響力。'],dreams:['你會慢慢發現，自己不是不行，只是以前缺一個能把你拉起來的環境。','你要的不是加入一個機會，而是成為一個更有力量的人。']},
- health:{hooks:['狀態差久了，人會慢慢失去野心。','你以為你只是累，其實你的人生節奏已經開始失控。','很多人不是不想改變，是身體和心都沒電了。','找回狀態，不只是健康問題，是人生重新啟動的問題。'],ideas:['一個人的能量，會影響他的選擇、表達、關係與收入。','健康事業真正打動人的，不是產品，而是讓人重新看見自己的可能。','當人開始變有精神、變有自信，他才會願意相信自己可以做更多。'],dreams:['你不是只想健康，你是想找回以前那個有光的自己。','改變狀態，是很多人重新相信人生的第一步。']}
+
+const hooks = {
+
+上班族:[
+"每天準時上下班的人，不一定穩定。",
+"很多上班族最怕的，不是累，而是看不到未來。",
+"真正危險的，不是薪水低，而是你只剩一種收入來源。"
+],
+
+美業:[
+"現在美業最缺的不是技術，是持續被看見。",
+"會做服務的人很多，但會經營自己的人很少。",
+"技術已經不是問題了，流量才是。"
+],
+
+媽媽族群:[
+"很多媽媽開始找副業，不是因為貪心。",
+"真正讓媽媽焦慮的，不是累，而是沒有選擇權。",
+"很多女生不是不努力，而是人生被家庭綁住太久。"
+],
+
+想翻身的人:[
+"人最痛苦的，不是窮，而是不甘心。",
+"很多人不是沒能力，而是一直待在不會翻身的環境。",
+"你有沒有發現，越長大，越怕人生就這樣定型。"
+],
+
+負債族:[
+"負債最痛苦的，不是欠錢。",
+"真正折磨人的，是每天醒來都覺得人生卡住。",
+"很多人不是不努力，而是努力根本填不滿現實。"
+]
+
 };
-const tone={boss:['格局拉高一點，你不是在找副業，你是在替未來建立選擇權。','市場不會同情努力的人，市場只獎勵看懂趨勢並且行動的人。','真正的機會，不是看起來輕鬆，而是能不能讓你變成更有價值的人。'],sharp:['清醒一點，你不改變，時間也會推著你付出代價。','不要再假裝還有很多時間，很多人的人生就是拖到沒有選擇。','你怕的不是失敗，你怕的是承認自己其實該開始了。'],warm:['你不用馬上做決定，但你可以先給自己一個了解的機會。','慢慢來可以，但不要停在原地，因為你值得有更好的路。','先不用想太遠，先知道自己適不適合，這就是開始。'],story:['以前我也以為，只要夠努力就會有結果，後來才知道，沒有系統的努力很容易被現實吃掉。','我不是一開始就懂，是被現實逼到必須醒過來。','真正讓人改變的，通常不是大道理，而是某一天突然發現不能再這樣下去了。']};
-const closeLines=['不用急著相信我，你只要先問自己：三年後還想不想過一樣的生活？','機會不是給最會喊口號的人，是給願意開始的人。','先了解，不承諾；先定位，不衝動；先看懂，再決定。','你不用很厲害才開始，但你要開始，才有機會變厲害。'];
-function pick(a){return a[Math.floor(Math.random()*a.length)]}
-function parts(){const theme=document.getElementById('theme').value;const t=document.getElementById('tone').value;return{h:pick(bank[theme].hooks),i:pick(bank[theme].ideas),d:pick(bank[theme].dreams),t:pick(tone[t]),c:document.getElementById('cta').value,r:document.getElementById('rule').value}}
-function generate(platform){const p=parts();let label='',text='';
- if(platform==='fb'){label='Facebook｜信任型長文｜35–60歲';text=`${p.h}\n\n我越來越覺得，這個時代最可惜的人，不是沒有能力的人，而是明明有能力，卻一直沒有進入一套能放大自己的系統。\n\n${p.i}\n\n很多人一聽到機會就防備，這很正常，因為市場上太多東西只會畫大餅。\n\n但真正值得看的，不是它說得多誇張，而是它能不能讓一個普通人：\n\n1. 學會表達自己\n2. 學會建立信任\n3. 學會經營人脈\n4. 學會把服務變成長期關係\n5. 學會用團隊和系統放大結果\n\n${p.d}\n\n${p.t}\n\n${pick(closeLines)}\n\n${p.c}\n\n品牌底線：${p.r}`}
- if(platform==='ig'){label='Instagram｜質感短文｜20–40歲';text=`${p.h}\n\n你不是沒有能力，\n你只是還沒有把能力放進系統。\n\n真正的改變，\n不是一夜暴富。\n\n是你開始靠近一群\n有方向、有工具、有行動力的人。\n\n${p.d}\n\n${p.c}\n\n#人生翻身 #AI副業 #第二收入 #個人成長 #不想認命 #高級招募`}
- if(platform==='threads'){label='Threads｜爆點觀點｜20–45歲';text=`${p.h}\n\n很多人討厭被招募。\n但其實他討厭的不是機會，\n是低級、油膩、只會畫餅的招募。\n\n真正高級的招募，\n不是叫你加入我。\n\n是讓你突然發現：\n你現在的人生模式，\n可能真的撐不起你想要的未來。\n\n${p.i}\n\n${p.t}\n\n${p.c}`}
- document.getElementById('output').innerHTML=`<span class="pill">${label}</span>\n${text}`;
+
+const emotions = {
+
+焦慮:[
+"你是不是也開始感覺，未來越來越不確定。",
+"很多人表面正常，但心裡其實很慌。",
+"現在最可怕的，是不知道自己五年後會在哪。"
+],
+
+不甘心:[
+"你最痛苦的，可能不是失敗，而是知道自己本來可以更好。",
+"很多人不是認命，而是慢慢被現實磨到不敢想。",
+"你有沒有發現，自己越來越不像以前那個有衝勁的人。"
+],
+
+迷茫:[
+"忙了一整年，卻不知道自己到底在往哪裡走。",
+"很多人現在不是沒事做，而是沒有方向。",
+"人生最空洞的時候，是每天都很忙，但沒有期待。"
+]
+
+};
+
+const personas = {
+
+總裁型:[
+"市場不會同情努力的人。",
+"真正的機會，是讓普通人也能放大自己。",
+"AI時代重新洗牌，真正有優勢的人，是懂得進入系統的人。"
+],
+
+人間清醒型:[
+"不要再假裝現在很穩定。",
+"時間不會等你準備好。",
+"很多人的人生，就是拖到沒有選擇。"
+],
+
+溫暖陪伴型:[
+"你不用現在立刻變很厲害。",
+"先慢慢靠近新的環境，也是一種開始。",
+"很多人缺的不是能力，而是有人陪他重新開始。"
+]
+
+};
+
+const endings = [
+
+"私訊我「翻身」，我給你一份 AI 時代收入定位方向。",
+"不用急著相信我，先了解一次，你會知道這是不是你要的下一條路。",
+"機會不是給最會喊口號的人，而是給願意開始的人。",
+"先不要急著拒絕新的可能，因為未來真的變很快。"
+
+];
+
+function pick(arr){
+return arr[Math.floor(Math.random()*arr.length)];
 }
-function generateRandomAll(){generate(pick(['fb','ig','threads']))}
-function copyOutput(){navigator.clipboard.writeText(document.getElementById('output').innerText).then(()=>alert('文案已複製。'))}
+
+function generateCopy(){
+
+const audience =
+document.getElementById("audience").value;
+
+const emotion =
+document.getElementById("emotion").value;
+
+const persona =
+document.getElementById("persona").value;
+
+const platform =
+document.getElementById("platform").value;
+
+const h = pick(hooks[audience] || hooks["想翻身的人"]);
+const e = pick(emotions[emotion] || emotions["焦慮"]);
+const p = pick(personas[persona] || personas["總裁型"]);
+const end = pick(endings);
+
+let structure = "";
+
+if(platform === "Facebook"){
+
+structure = `
+【Facebook 長文版】
+
+${h}
+
+${e}
+
+我越來越發現，
+現在很多人的問題，
+真的不是不努力。
+
+而是：
+
+努力了很久，
+卻一直沒有進入一套
+能放大自己的系統。
+
+${p}
+
+很多人一聽到機會就防備，
+這很正常。
+
+因為市場上太多東西，
+只會畫大餅。
+
+但真正值得看的，
+不是它說得多誇張。
+
+而是：
+
+它能不能讓一個普通人，
+開始重新看見希望。
+
+${end}
+
+`;
+
+}
+
+if(platform === "Instagram"){
+
+structure = `
+【Instagram 質感版】
+
+${h}
+
+很多時候，
+你不是沒有能力。
+
+你只是：
+待在一個不會讓你變強的環境。
+
+${e}
+
+真正的改變，
+不是突然暴富。
+
+而是：
+
+你開始靠近新的圈層、
+新的思維、
+新的可能。
+
+${p}
+
+${end}
+
+#人生翻身
+#AI時代
+#第二收入
+#個人成長
+#不想認命
+
+`;
+
+}
+
+if(platform === "Threads"){
+
+structure = `
+【Threads 爆點版】
+
+${h}
+
+很多人討厭被招募。
+
+但其實：
+
+他討厭的不是機會。
+
+而是：
+低級、
+油膩、
+只會畫餅的招募。
+
+${e}
+
+真正高級的招募，
+不是叫你加入。
+
+而是：
+
+讓你突然發現：
+
+你現在的人生模式，
+可能真的撐不起未來。
+
+${p}
+
+${end}
+
+`;
+
+}
+
+document.getElementById("output").innerText =
+structure;
+
+}
+
+function copyText(){
+
+navigator.clipboard.writeText(
+document.getElementById("output").innerText
+);
+
+alert("文案已複製");
+
+}
+
 </script>
+
 </body>
 </html>
